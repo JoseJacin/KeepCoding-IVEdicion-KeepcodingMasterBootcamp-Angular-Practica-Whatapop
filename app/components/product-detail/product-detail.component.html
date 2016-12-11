@@ -11,14 +11,12 @@
                 'warning': _product.category.id === 3 }">
                 {{ _product.category.name }}
             </span>
-
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
             | Blue Path                                                        |
             |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
             | Una vez tengas creado el Pipe FromNowPipe, úsalo con la fecha de |
             | publicación.                                                     |
             |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-            <!--<span>Publicado {{ _product.publishedDate }}</span>-->
             <span>Publicado {{ _product.publishedDate | fromNow }}</span>
         </p>
         <p [innerHtml]="_product.description"></p>

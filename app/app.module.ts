@@ -20,13 +20,9 @@ import { ProductService } from "./services/product.service";
 import { SoldProductsResolve } from "./services/sold-products-resolve.service";
 import { UserProfileComponent } from "./components/user-profile/user-profile.component";
 import { UserService } from "./services/user.service";
-import { FromNowPipe } from "./pipes/publication-date.pipe"
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-| Blue Path                                                        |
-|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-| No olvides declarar FromNowPipe en el módulo.                    |
-|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+// Blue Path. Declaración de FromNowPipe en el módulo
+import { FromNowPipe } from "./pipes/publication-date.pipe"
 
 @NgModule({
     imports: [
