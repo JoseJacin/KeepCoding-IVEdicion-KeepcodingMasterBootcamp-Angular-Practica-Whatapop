@@ -46,7 +46,6 @@ export class ProductsCollectionComponent implements OnDestroy, OnInit {
     | como parámetro el identificador del producto.                    |
     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
     showProductDetail(product: Product): void {
-        console.log(product);
-        this._router.navigate([`/products/${product.id}`]);
+        this._router.navigate(['products', product.id]);
     }
 }
