@@ -19,7 +19,8 @@
     <button
         class="button expanded"
         [class.success]="data.state === 'selling'"
-        [class.secondary]="data.state === 'sold'">
+        [class.secondary]="data.state === 'sold'"
+        (click)="notifyProductselected(data)">
         <span *ngIf="data.state === 'selling'">
             Comprar por {{ data.price }} €
         </span>

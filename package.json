@@ -1,5 +1,5 @@
 {
-  "name": "kc-whatapop-seed",
+  "name": "WhataPop",
   "version": "1.0.0",
   "description": "Seed de la práctica HTML5 + CSS3 + Angular para el Mobile Startup Engineering de KeepCoding.",
   "scripts": {
@@ -7,10 +7,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:vermicida/kc-whatapop-seed.git"
+    "url": "git@github.com/JoseJacin/KeepCoding-IVEdicion-KeepcodingMasterBootcamp-Angular-PracticaWhatapop.git"
   },
-  "license": "MIT",
-  "dependencies": {
+    "author": "Jose Sanchez",
+    "license": "MIT",
+    "dependencies": {
     "@angular/common": "~2.2.0",
     "@angular/compiler": "~2.2.0",
     "@angular/core": "~2.2.0",
