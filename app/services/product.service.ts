@@ -28,7 +28,9 @@ export class ProductService {
         |                                                                  |
         |   _sort=publishedDate&_order=DESC                                |
         |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
+        let params: URLSearchParams = new URLSearchParams();
+        params.set('_sort', 'publishedDate');
+        params.set('_order', 'DESC');
         /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
         | Red Path                                                         |
         |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
@@ -60,7 +62,7 @@ export class ProductService {
         |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
         return this._http
-                   .get(`${this._backendUri}/products`)
+                   .get(`${this._backendUri}/products`, {search: params})
                    .map((data: Response): Product[] => Product.fromJsonToList(data.json()));
     }
 
