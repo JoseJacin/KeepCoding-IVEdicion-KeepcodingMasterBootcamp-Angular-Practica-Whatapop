@@ -6,6 +6,7 @@ import "rxjs/add/operator/map";
 import { Product } from "../models/product";
 import { ProductFilter } from "../models/product-filter";
 import { BackendUri } from "../app.settings";
+import {filter} from "rxjs/operator/filter";
 
 @Injectable()
 export class ProductService {
@@ -46,6 +47,14 @@ export class ProductService {
         |   - Búsqueda por categoría:                                      |
         |       category.id=x (siendo x el identificador de la categoría)  |
         |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+        // params.set('q', filter.text);
+        if (filter) {
+            params.set('q', filter.text);
+            params.set('category.id', filter.category);
+            // Como se encuentra en el filtro y aunque no sea necesario, he añadido el filtrado por categoría
+            params.set('state', filter.state);
+        }
+
 
         /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
         | Yellow Path                                                      |
