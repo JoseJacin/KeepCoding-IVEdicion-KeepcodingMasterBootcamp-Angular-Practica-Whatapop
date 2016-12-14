@@ -47,12 +47,9 @@ export class ProductService {
         |   - Búsqueda por categoría:                                      |
         |       category.id=x (siendo x el identificador de la categoría)  |
         |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-        // params.set('q', filter.text);
         if (filter) {
             params.set('q', filter.text);
             params.set('category.id', filter.category);
-            // Como se encuentra en el filtro y aunque no sea necesario, he añadido el filtrado por categoría
-            params.set('state', filter.state);
         }
 
 
@@ -69,6 +66,9 @@ export class ProductService {
         |   - Búsqueda por estado:                                         |
         |       state=x (siendo x el estado)                               |
         |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+        if (filter) {
+            params.set('state', filter.state);
+        }
 
         return this._http
                    .get(`${this._backendUri}/products`, {search: params})
