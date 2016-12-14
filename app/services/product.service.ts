@@ -6,7 +6,6 @@ import "rxjs/add/operator/map";
 import { Product } from "../models/product";
 import { ProductFilter } from "../models/product-filter";
 import { BackendUri } from "../app.settings";
-import {filter} from "rxjs/operator/filter";
 
 @Injectable()
 export class ProductService {
