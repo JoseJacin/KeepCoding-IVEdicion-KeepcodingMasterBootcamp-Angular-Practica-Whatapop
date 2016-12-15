@@ -6,15 +6,17 @@
 }
 
 .fa-heart-o {
-    font-size: 20px;
+    font-size: 28px;
     cursor: pointer;
     color: grey;
+    vertical-align: top;
 }
 
 .fa-heart {
-    font-size: 20px;
+    font-size: 28px;
     cursor: pointer;
     color: red;
+    vertical-align: top;
 }
 
 .fa-heart:active,
