@@ -22,7 +22,7 @@
         [class.secondary]="data.state === 'sold'"
         (click)="notifyProductselected(data)">
         <span *ngIf="data.state === 'selling'">
-            Comprar por {{ data.price }} €
+            Comprar por {{ data.price | number:'1.2-2' }} €
         </span>
         <span *ngIf="data.state === 'sold'">
             Ver detalles
