@@ -12,24 +12,25 @@
                 {{ _product.category.name }}
             </span>
             <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-            | Blue Path                                                        |
-            |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-            | Una vez tengas creado el Pipe FromNowPipe, úsalo con la fecha de |
-            | publicación.                                                     |
-            |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-            <span>Publicado {{ _product.publishedDate | fromNow }}</span>
-            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
             | Broken White Path                                                |
             |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
             | Creación de un botón que permitirá establecer Likes a un Producto|
             |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <span>
                 <i class="fa"
-                [class.fa-heart]="_productLiked"
-                [class.fa-heart-o]="!_productLiked"
-                (click)="likingProduct()" >
+                   [class.fa-heart]="_productLiked"
+                   [class.fa-heart-o]="!_productLiked"
+                   (click)="likingProduct()" >
                 </i>
             </span>
+
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+            | Blue Path                                                        |
+            |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+            | Una vez tengas creado el Pipe FromNowPipe, úsalo con la fecha de |
+            | publicación.                                                     |
+            |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <span>Publicado {{ _product.publishedDate | fromNow }}</span>
         </p>
         <p [innerHtml]="_product.description"></p>
         <user-profile [userId]="_product.seller.id"></user-profile>
