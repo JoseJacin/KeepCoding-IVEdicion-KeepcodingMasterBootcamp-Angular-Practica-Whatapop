@@ -5,7 +5,7 @@
     <div class="medium-8 columns">
         <h3>{{ _product.name }}</h3>
         <p>
-            <span class="label" [ngClass]="{
+            <span id="categoryLabel" class="label" [ngClass]="{
                 'info': _product.category.id === 1,
                 'alert': _product.category.id === 2,
                 'warning': _product.category.id === 3 }">
@@ -18,6 +18,18 @@
             | publicación.                                                     |
             |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
             <span>Publicado {{ _product.publishedDate | fromNow }}</span>
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+            | Broken White Path                                                |
+            |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+            | Creación de un botón que permitirá establecer Likes a un Producto|
+            |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <span>
+                <i class="fa"
+                [class.fa-heart]="_productLiked"
+                [class.fa-heart-o]="!_productLiked"
+                (click)="likingProduct()" >
+                </i>
+            </span>
         </p>
         <p [innerHtml]="_product.description"></p>
         <user-profile [userId]="_product.seller.id"></user-profile>

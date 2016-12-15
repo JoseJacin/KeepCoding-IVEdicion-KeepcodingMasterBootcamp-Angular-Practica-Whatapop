@@ -4,3 +4,21 @@
     padding-top: 28px;
     margin-bottom: 20px;
 }
+
+.fa-heart-o {
+    font-size: 20px;
+    cursor: pointer;
+    color: grey;
+}
+
+.fa-heart {
+    font-size: 20px;
+    cursor: pointer;
+    color: red;
+}
+
+.fa-heart:active,
+.fa-heart-o:active{
+    cursor: pointer;
+    color: gainsboro;
+}
