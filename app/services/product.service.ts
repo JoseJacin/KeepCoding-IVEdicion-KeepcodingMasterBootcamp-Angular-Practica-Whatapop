@@ -93,4 +93,6 @@ export class ProductService {
                    .patch(`${this._backendUri}/products/${productId}`, body)
                    .map((data: Response): Product => Product.fromJson(data.json()));
     }
+
+
 }
