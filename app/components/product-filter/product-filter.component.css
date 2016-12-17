@@ -6,3 +6,90 @@
     padding-top: 28px;
     padding-bottom: 8px;
 }
+
+.large {
+    width: 6em;
+    height: 6em;}
+
+.medium {
+    width: 4em;
+    height: 4em;}
+
+[type='checkbox'] + label {
+    display: inline-block;
+    vertical-align: baseline;
+    margin-right: 1rem;
+    margin-bottom: 0;
+    align-items: stretch;
+    position: absolute;
+}
+
+label {
+    display: block;
+    margin: 0;
+    font-weight: normal;
+    line-height: normal;
+    text-anchor: center;
+}
+
+
+input[type=checkbox] + label:before {
+    font-family: FontAwesome;
+    display: inline-block;
+    font-size: 40px;
+    margin-left: 0px;
+    align-items: stretch;
+    transition: color .4s,
+                letter-spacing 0s;
+    font-weight: normal;
+    line-height: normal;
+    text-anchor: center;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid #c8c6c6;
+    width: 30px;
+    height: 30px;
+    border-radius: 0px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    align-items: stretch;
+}
+
+input[type=checkbox]#checkSellingFilter {
+    display: none;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+input[type=checkbox]#checkSellingFilter + label:before {
+    content: "\f096";
+    letter-spacing: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+input[type=checkbox]#checkSellingFilter:checked + label:before {
+    content: '\f046';
+    color: #2199e8;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    letter-spacing: -1px;
+}
+
+input[type="checkbox"]:focus{
+    outline: none;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}

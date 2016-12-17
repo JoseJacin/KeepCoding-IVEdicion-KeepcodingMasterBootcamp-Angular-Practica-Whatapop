@@ -48,9 +48,10 @@ export class ProductService {
         |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
         if (filter) {
             params.set('q', filter.text);
-            params.set('category.id', filter.category);
+            if (filter.category !== "undefined") {
+                params.set('category.id', filter.category);
+            }
         }
-
 
         /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
         | Yellow Path                                                      |
@@ -65,8 +66,27 @@ export class ProductService {
         |   - Búsqueda por estado:                                         |
         |       state=x (siendo x el estado)                               |
         |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+        // if (filter) {
+        //     params.set('state', filter.state);
+        // }
+
+        /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+        | Red Wine Path                                                    |
+        |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+        | Filtrado y ordenación avanzada                                   |
+        | Filtrado por estado "En venta"                                   |
+        |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+        console.log("filter", filter);
         if (filter) {
-            params.set('state', filter.state);
+            if (filter.state !== undefined) {
+                if (filter.state.toString() === "true") {
+                    params.set('state', 'selling');
+                } else if (filter.state.toString() === "false"){
+                    params.delete('state');
+                } else {
+                    params.set('state', filter.state);
+                }
+            }
         }
 
         return this._http
