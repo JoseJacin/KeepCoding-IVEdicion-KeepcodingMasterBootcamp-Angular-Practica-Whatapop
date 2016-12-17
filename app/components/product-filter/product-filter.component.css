@@ -17,8 +17,7 @@
 
 [type='checkbox'] + label {
     display: inline-block;
-    vertical-align: baseline;
-    margin-right: 1rem;
+    margin-right: 0rem;
     margin-bottom: 0;
     align-items: stretch;
     position: absolute;
@@ -30,6 +29,8 @@ label {
     font-weight: normal;
     line-height: normal;
     text-anchor: center;
+    font-family: sans-serif;
+    font-size: 100%;
 }
 
 
@@ -44,6 +45,7 @@ input[type=checkbox] + label:before {
     font-weight: normal;
     line-height: normal;
     text-anchor: center;
+    vertical-align: middle;
 }
 
 input[type="checkbox"]{
